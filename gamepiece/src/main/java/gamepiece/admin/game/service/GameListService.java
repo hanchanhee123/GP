@@ -1,5 +1,13 @@
 package gamepiece.admin.game.service;
 
-public interface GameListService {
+import java.util.List;
 
+
+
+import gamepiece.admin.game.domain.Game;
+
+
+public interface GameListService {
+	
+	public List<Game> getGameList();
 }
