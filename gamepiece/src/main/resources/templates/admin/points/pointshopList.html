@@ -44,11 +44,13 @@
                     <!-- card-header end// -->
                     <div class="card-body">
                         <div class="row gx-3 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 row-cols-xxl-5">
-                            <div class="col">
+                            <div class="col" th:object="${pointList}" th:each="l : ${pointList}">
                                 <div class="card card-product-grid">
-                                    <a href="#" class="img-wrap"> <img src="assets/imgs/items/1.jpg" alt="Product" /> </a>
+                                    <a href="#" class="img-wrap"> 
+                                    	<img src="assets/imgs/items/1.jpg" alt="Product" /> 
+                                    </a>
                                     <div class="info-wrap">
-                                        <a href="#" class="title text-truncate">Haagen-Dazs Caramel Cone Ice</a>
+                                        <a href="#" class="title text-truncate" th:text="${pointList.itemName}">Haagen-Dazs Caramel Cone Ice</a>
                                         <div class="price mb-2">$179.00</div>
                                         <!-- price.// -->
                                         <a href="page-pointshop-detail.html" class="btn btn-sm font-sm rounded btn-brand"> <i class="material-icons md-edit"></i> 수정 </a>
