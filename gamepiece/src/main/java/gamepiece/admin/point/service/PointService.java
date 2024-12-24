@@ -1,5 +1,9 @@
 package gamepiece.admin.point.service;
 
-public interface PointService {
+import java.util.List;
 
+import gamepiece.admin.point.domain.Point;
+
+public interface PointService {
+	List<Point> findAll();
 }

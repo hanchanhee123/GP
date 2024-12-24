@@ -5,14 +5,24 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import gamepiece.admin.point.service.PointService;
+
+
 @Controller
 @RequestMapping("/point")
 public class PointController {
-
+	
+	private final PointService pointService;
+	
+	public PointController(PointService pointService) {
+		this.pointService = pointService;
+	}
+	
+	
 	@GetMapping("/List")
 	public String pointListView(Model model) {
 		
-		model.addAttribute("List", "아이템 목록");
+		model.addAttribute("pointList", pointService.findAll());
 		
 		return "admin/points/pointshopList";
 	}
