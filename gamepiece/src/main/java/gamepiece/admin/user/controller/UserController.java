@@ -1,42 +1,63 @@
 package gamepiece.admin.user.controller;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import gamepiece.admin.user.domain.User;
+import gamepiece.admin.user.service.UserService;
 
 @Controller
 @RequestMapping("/admin/user")
 public class UserController {
+	
+	private final UserService userService;
+	
+	public UserController(UserService userService) {
+		this.userService = userService;
+	}
 
-	@GetMapping("/userList")
+	@GetMapping("/allUserInfo")
 	public String getAllUserInfo(Model model) {
 		
-		model.addAttribute("title", "회원목록");
+		List<User> allUserInfo = userService.getAllUserInfo();
 		
-		return "admin/user/userList";
+		model.addAttribute("allUserInfo", allUserInfo);
+		System.out.println("전체 회원정보 조회 : " + allUserInfo);
+		
+		return "admin/user/allUserInfo";
 	}
 	
-	@GetMapping("/removeUserList")
-	public String getRemoveUserInfo(Model model) {
+	@GetMapping("/UserInfo")
+	public String getUserInfo(@RequestParam String id, Model model) {
 		
-		model.addAttribute("title", "탈퇴 회원목록");
+		User userInfo = userService.getUserInfo(id);
+		
+		model.addAttribute("id", id);
+		model.addAttribute("userInfo", userInfo);
+		System.out.println("회원 상세정보 조회 : " + userInfo);
+		
+		return "admin/user/UserInfo";
+	}
+	
+	@GetMapping("/removeUserInfo")
+	public String getRemoveUserInfo(Model model) {
 		
 		return "admin/user/userRemove";
 	}
 	
-	@GetMapping("/dormancyUserList")
+	@GetMapping("/dormancyUserInfo")
 	public String getDormancyUserInfo(Model model) {
-		
-		model.addAttribute("title", "휴면 회원목록");
 		
 		return "admin/user/userDormancy";
 	}
 	
 	@GetMapping("/userLoginlog")
 	public String getUserLoginLog(Model model) {
-		
-		model.addAttribute("title", "회원 로그인 기록 조회");
 		
 		return "admin/user/userLoginlog";
 	}
