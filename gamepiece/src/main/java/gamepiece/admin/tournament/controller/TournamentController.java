@@ -11,8 +11,16 @@ public class TournamentController {
 	@GetMapping("/tournamentList")
 	public String getTournamentList(Model model) {
 		
-		model.addAttribute("title", "대회리스트");
+		model.addAttribute("title", "대회 일정 목록");
 		
-		return "/admin/tournament/tournament_list";	
+		return "admin/tournament/tournamentList";	
+	}
+	
+	@GetMapping("/addTournament")
+	public String addTournament(Model model) {
+		
+		model.addAttribute("title", "");
+		
+		return "admin/tournament/addTournament";
 	}
 }
