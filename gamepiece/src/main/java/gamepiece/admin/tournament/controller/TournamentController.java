@@ -19,7 +19,7 @@ public class TournamentController {
 	@GetMapping("/addTournament")
 	public String addTournament(Model model) {
 		
-		model.addAttribute("title", "");
+		model.addAttribute("title", "대회 추가");
 		
 		return "admin/tournament/addTournament";
 	}
