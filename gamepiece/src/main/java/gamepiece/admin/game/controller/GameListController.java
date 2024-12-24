@@ -11,6 +11,7 @@ public class GameListController {
 
 	@GetMapping("/gameList")
 	public String gameListView(Model model) {
+		model.addAttribute("title", "게임목록");
 		return "admin/game/gameList";
 	}
 }
