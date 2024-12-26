@@ -21,5 +21,11 @@ public class TournamentServiceImpl implements TournamentService {
 		// TODO Auto-generated method stub
 		return tournamentMapper.getTournamentList();
 	}
+
+	@Override
+	public List<Tournament> getGameList() {
+		// TODO Auto-generated method stub
+		return tournamentMapper.getGameList();
+	}
 	
 }
