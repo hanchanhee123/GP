@@ -10,14 +10,14 @@ import lombok.ToString;
 @Setter
 @ToString
 public class Point {
+	
 
-
-	private String ps_cd;
-	private String ps_cate_cd;
-	private String ps_nm;
-	private String img_url;
-	private String img_type;
-	private int ps_price;
+	private String itemCd;
+	private String itemCate;
+	private String itemName;
+	private String itemImgurl;
+	private String itemImgtype;
+	private int itemPrice;
 	private String admin_id;
 	private Date reg_ymd;
 	
