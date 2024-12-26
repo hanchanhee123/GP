@@ -26,16 +26,8 @@
 	                                <input type="text" placeholder="Type here" class="form-control">
 	                            </div>
 	                            <div class="mb-4">
-	                                <label class="form-label">대회 설명</label>
-	                                <textarea placeholder="Type here" class="form-control" rows="4"></textarea>
-	                            </div>
-	                            <div class="mb-4">
 	                                <label class="form-label">대회 시작 날짜</label>
 	                                <input type="date" placeholder="Type here" class="form-control">
-	                            </div>
-	                            <div class="mb-4">
-	                                <label class="form-label">배급사</label>
-	                                <input type="text" placeholder="Type here" class="form-control">
 	                            </div>
 	                        </div> <!-- col.// -->
 	                    </div> <!-- row.// -->
@@ -46,17 +38,9 @@
 	                        </div>
 	                        <div class="col-md-9">
 	                            <div class="mb-4">
-	                                <label class="mb-2 form-check form-check-inline" style="width: 45%;">
-	                                    <input class="form-check-input" checked="" name="mycategory" type="checkbox">
-	                                    <span class="form-check-label"> LoL</span>
-	                                </label>
-	                                <label class="mb-2 form-check form-check-inline" style="width: 45%;">
-	                                    <input class="form-check-input" name="mycategory" type="checkbox">
-	                                    <span class="form-check-label"> Valorant </span>
-	                                </label>
-	                                <label class="mb-2 form-check form-check-inline" style="width: 45%;">
-	                                    <input class="form-check-input" name="mycategory" type="checkbox">
-	                                    <span class="form-check-label"> PUBG</span>
+	                                <label class="mb-2 form-check form-check-inline" style="width: 45%;" th:each="game:${gameList}">
+	                                    <input class="form-check-input" name="mycategory" type="radio" th:value="${game.gameName}">
+	                                    <span class="form-check-label" th:text="${game.gameName}"> LoL</span>
 	                                </label>
 	                            </div>
 	                        </div> <!-- col.// -->
@@ -64,7 +48,7 @@
 	                    <hr class="mb-4 mt-0">
 	                    <div class="row">
 	                        <div class="col-md-3">
-	                            <h6>4. 첨부파일</h6>
+	                            <h6>3. 첨부파일</h6>
 	                        </div>
 	                        <div class="col-md-9">
 	                            <div class="mb-4">
