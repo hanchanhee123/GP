@@ -23,6 +23,7 @@ public class PointController {
 	public String pointListView(Model model) {
 		
 		model.addAttribute("pointList", pointService.findAll());
+		model.addAttribute("cateList", pointService.findCate());
 		
 		return "admin/points/pointshopList";
 	}
@@ -36,7 +37,8 @@ public class PointController {
 	@GetMapping("/Add")
 	public String pointAdd(Model model) {
 		
-		model.addAttribute("title", "상세보기");
+		model.addAttribute("title", "아이템 추가");
+		model.addAttribute("cateList", pointService.findCate());
 		
 		return "admin/points/pointshopadd";
 	}
