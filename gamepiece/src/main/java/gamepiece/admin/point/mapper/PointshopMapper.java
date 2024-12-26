@@ -10,6 +10,8 @@ import gamepiece.admin.point.domain.PointCategories;
 @Mapper
 public interface PointshopMapper {
 	List<Point> findAll();
+	
 	List<PointCategories> findCate();
 	
+	List<Point> addPointShop();
 }

@@ -9,4 +9,6 @@ public interface PointService {
 	List<Point> findAll();
 	
 	List<PointCategories> findCate();
+	
+	List<Point> addPointShop();
 }

@@ -16,7 +16,6 @@ public class Point {
 	private String itemCate;
 	private String itemName;
 	private String itemImgurl;
-	private String itemImgtype;
 	private int itemPrice;
 	private String admin_id;
 	private Date reg_ymd;

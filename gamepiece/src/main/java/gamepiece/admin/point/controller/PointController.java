@@ -39,6 +39,8 @@ public class PointController {
 		
 		model.addAttribute("title", "아이템 추가");
 		model.addAttribute("cateList", pointService.findCate());
+		model.addAttribute("pointList", pointService.findAll());
+		/* model.addAttribute("addItem", pointService.addPointShop()); */
 		
 		return "admin/points/pointshopadd";
 	}

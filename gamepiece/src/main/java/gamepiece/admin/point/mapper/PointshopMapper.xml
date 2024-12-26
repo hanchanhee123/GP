@@ -7,7 +7,6 @@
 		<result column="ps_cate_cd" property="itemCate" />
 		<result column="ps_nm" 	property="itemName" />
 		<result column="img_url" 	property="itemImgurl" />
-		<result column="img_type" 	property="itemImgtype" />
 		<result column="ps_price" 		property="itemPrice" />
 		<result column="admin_id" 	property="admin_id" />
 		<result column="reg_ymd" 	property="reg_ymd" />
@@ -24,8 +23,7 @@
 			ps_cd, 
 			ps_cate_cd, 
 			ps_nm, 
-			img_url, 
-			img_type, 
+			img_url,
 			ps_price, 
 			admin_id,
 			reg_ymd
@@ -44,23 +42,25 @@
 			cate_nm DESC;
 	</select>
 	
-	<!-- <insert id="addProducts" parameterType="com.example.demo.products.domain.Products">
-        INSERT INTO tb_product (
-        	p_code, 
-			p_name, 
-			p_price, 
-			p_desc, 
-			p_cnt,
-			p_date
+	<insert id="addPointShop" parameterType="gamepiece.admin.point.domain.Point">
+        INSERT INTO point_shop (
+        	ps_cd, 
+			ps_cate_cd, 
+			ps_nm, 
+			img_url,
+			ps_price, 
+			admin_id,
+			reg_ymd
 		) VALUES (
-			#{productCode},
-			#{productName}, 
-			#{productPrice},
-			#{productDesc},
-			#{productCnt},
-			NOW()
+			#{itemCd},
+			#{itemCate}, 
+			#{itemName},
+			#{itemImgurl},
+			#{itemPrice},
+			#{admin_id},
+			now()
 		)
-    </insert> -->
+    </insert>
     
 	
 

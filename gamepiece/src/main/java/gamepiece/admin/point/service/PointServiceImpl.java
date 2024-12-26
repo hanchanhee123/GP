@@ -23,7 +23,10 @@ public class PointServiceImpl implements PointService {
 
 	@Override
 	public List<PointCategories> findCate() {
-		// TODO Auto-generated method stub
 		return pointshopMapper.findCate();
+	}
+	
+	public List<Point> addPointShop() {
+		return pointshopMapper.addPointShop();
 	}
 }
