@@ -21,7 +21,6 @@ public class TournamentController {
 		
 		model.addAttribute("title", "대회 일정 목록");
 		model.addAttribute("tournamentList", tournamentService.getTournamentList());
-		System.out.println(tournamentService.getTournamentList());
 		
 		return "admin/tournament/tournamentList";	
 	}
@@ -30,6 +29,7 @@ public class TournamentController {
 	public String addTournament(Model model) {
 		
 		model.addAttribute("title", "대회 추가");
+		model.addAttribute("gameList", tournamentService.getGameList());
 		
 		return "admin/tournament/addTournament";
 	}
