@@ -10,4 +10,14 @@
 		user;
 </select>
 
+<select id="getUserInfo" parameterType="string" resultType="gamepiece.admin.user.domain.User">
+	SELECT
+		*
+	FROM
+		user u INNER JOIN authrt ar
+		ON u.authrt_cd = ar.authrt_cd
+	WHERE
+		id = #{id};
+</select>
+
 </mapper>

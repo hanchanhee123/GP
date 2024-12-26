@@ -13,6 +13,7 @@ public class User {
 
 	private String id;
 	private String authrt_cd;
+	private String authrt_nm;
 	private String user_pw;
 	private String user_nm;
 	private String user_gender;

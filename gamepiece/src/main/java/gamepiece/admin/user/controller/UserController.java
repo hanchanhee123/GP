@@ -33,27 +33,26 @@ public class UserController {
 	}
 	
 	@GetMapping("/UserInfo")
-	public String getUserInfo(String id, Model model) {
+	public String getUserInfo(@RequestParam String id, Model model) {
 		
-		//User userInfo = userService.getUserInfo(id);
+		User userInfo = userService.getUserInfo(id);
 		
-		model.addAttribute("id", id);
-		// model.addAttribute("userInfo", userInfo);
-		// System.out.println("회원 상세정보 조회 : " + userInfo);
+		model.addAttribute("userInfo", userInfo);
+		System.out.println("회원 상세정보 조회 : " + userInfo);
 		
-		return "admin/user/UserInfo";
+		return "admin/user/userInfo";
 	}
 	
 	@GetMapping("/removeUserInfo")
 	public String getRemoveUserInfo(Model model) {
 		
-		return "admin/user/userRemove";
+		return "admin/user/removeUserInfo";
 	}
 	
 	@GetMapping("/dormancyUserInfo")
 	public String getDormancyUserInfo(Model model) {
 		
-		return "admin/user/userDormancy";
+		return "admin/user/dormancyUserInfo";
 	}
 	
 	@GetMapping("/userLoginlog")
