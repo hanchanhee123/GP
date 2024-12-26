@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 import gamepiece.admin.game.domain.Game;
 
 @Mapper
-public interface GameListMapper {
+public interface GameListMapper{
 
 	List<Game> getGameList();
 }
