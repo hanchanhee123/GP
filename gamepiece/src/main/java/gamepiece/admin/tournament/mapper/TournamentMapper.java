@@ -8,5 +8,7 @@ import gamepiece.admin.tournament.domain.Tournament;
 
 @Mapper
 public interface TournamentMapper {
-	public List<Tournament> getTournamentList(); 
+	public List<Tournament> getTournamentList();
+
+	public List<Tournament> getGameList(); 
 }
