@@ -3,11 +3,12 @@
 
 <mapper namespace="gamepiece.admin.user.mapper.UserMapper">
 
-<select id="getAllUserInfo" parameterType="string" resultType="gamepiece.admin.user.domain.User">
-	SELECT
+	<select id="getAllUserInfo" parameterType="string"
+		resultType="gamepiece.admin.user.domain.User">
+		SELECT
 		*
-	FROM
+		FROM
 		user;
-</select>
+	</select>
 
 </mapper>
