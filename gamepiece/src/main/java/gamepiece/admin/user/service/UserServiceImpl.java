@@ -18,7 +18,7 @@ public class UserServiceImpl implements UserService {
 		return userMapper.getAllUserInfo();
 	}
 	
-	@Autowired
+	
 	public User getUserInfo(String id) {
 		
 		return userMapper.getUserInfo(id);
