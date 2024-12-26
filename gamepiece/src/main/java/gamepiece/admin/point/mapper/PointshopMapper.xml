@@ -1,0 +1,67 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="gamepiece.admin.point.mapper.PointshopMapper">
+	<resultMap type="gamepiece.admin.point.domain.Point" id="pointshopResultMap">
+		<id column="ps_cd" 			property="itemCd"/>
+		<result column="ps_cate_cd" property="itemCate" />
+		<result column="ps_nm" 	property="itemName" />
+		<result column="img_url" 	property="itemImgurl" />
+		<result column="img_type" 	property="itemImgtype" />
+		<result column="ps_price" 		property="itemPrice" />
+		<result column="admin_id" 	property="admin_id" />
+		<result column="reg_ymd" 	property="reg_ymd" />
+	</resultMap>
+	
+	<resultMap type="gamepiece.admin.point.domain.PointCategories" id="pointshopCateResult">
+		<id column="cate_cd" property="itemCate" />
+		<result column="cate_nm" 	property="itemName" />
+	</resultMap>
+
+	<select id="findAll" resultMap="pointshopResultMap">
+		/* 사용자 조회 */
+		SELECT 
+			ps_cd, 
+			ps_cate_cd, 
+			ps_nm, 
+			img_url, 
+			img_type, 
+			ps_price, 
+			admin_id,
+			reg_ymd
+		FROM 
+			point_shop;
+	</select>
+	
+	<select id="findCate" resultMap="pointshopCateResult">
+		/* 사용자 조회 */
+		SELECT 
+			cate_cd,
+			cate_nm
+		FROM 
+			pointshop_categories
+		ORDER BY
+			cate_nm DESC;
+	</select>
+	
+	<!-- <insert id="addProducts" parameterType="com.example.demo.products.domain.Products">
+        INSERT INTO tb_product (
+        	p_code, 
+			p_name, 
+			p_price, 
+			p_desc, 
+			p_cnt,
+			p_date
+		) VALUES (
+			#{productCode},
+			#{productName}, 
+			#{productPrice},
+			#{productDesc},
+			#{productCnt},
+			NOW()
+		)
+    </insert> -->
+    
+	
+
+</mapper>

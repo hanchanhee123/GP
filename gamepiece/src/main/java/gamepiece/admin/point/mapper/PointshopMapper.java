@@ -1,12 +1,15 @@
-package gamepiece.admin.point.service;
+package gamepiece.admin.point.mapper;
 
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 
 import gamepiece.admin.point.domain.Point;
 import gamepiece.admin.point.domain.PointCategories;
 
-public interface PointService {
+@Mapper
+public interface PointshopMapper {
 	List<Point> findAll();
-	
 	List<PointCategories> findCate();
+	
 }
