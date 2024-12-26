@@ -12,6 +12,11 @@
 		<result column="admin_id" 	property="admin_id" />
 		<result column="reg_ymd" 	property="reg_ymd" />
 	</resultMap>
+	
+	<resultMap type="gamepiece.admin.point.domain.PointCategories" id="pointshopCateResult">
+		<id column="cate_cd" property="itemCate" />
+		<result column="cate_nm" 	property="itemName" />
+	</resultMap>
 
 	<select id="findAll" resultMap="pointshopResultMap">
 		/* 사용자 조회 */
@@ -26,6 +31,17 @@
 			reg_ymd
 		FROM 
 			point_shop;
+	</select>
+	
+	<select id="findCate" resultMap="pointshopCateResult">
+		/* 사용자 조회 */
+		SELECT 
+			cate_cd,
+			cate_nm
+		FROM 
+			pointshop_categories
+		ORDER BY
+			cate_nm DESC;
 	</select>
 	
 	<!-- <insert id="addProducts" parameterType="com.example.demo.products.domain.Products">

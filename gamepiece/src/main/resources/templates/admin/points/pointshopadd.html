@@ -53,25 +53,9 @@
                                 </div>
                                 <div class="col-md-9">
                                     <div class="mb-4">
-                                        <label class="mb-2 form-check form-check-inline" style="width: 45%;">
+                                        <label class="mb-2 form-check form-check-inline" style="width: 45%;" th:each="cateList : ${cateList}">
                                             <input class="form-check-input" checked="" name="mycategory" type="radio">
-                                            <span class="form-check-label">이모티콘</span>
-                                        </label>
-                                        <label class="mb-2 form-check form-check-inline" style="width: 45%;">
-                                            <input class="form-check-input" name="mycategory" type="radio">
-                                            <span class="form-check-label">프로필이미지 </span>
-                                        </label>
-                                        <label class="mb-2 form-check form-check-inline" style="width: 45%;">
-                                            <input class="form-check-input" name="mycategory" type="radio">
-                                            <span class="form-check-label">아바타 액자</span>
-                                        </label>
-                                        <label class="mb-2 form-check form-check-inline" style="width: 45%;">
-                                            <input class="form-check-input" name="mycategory" type="radio">
-                                            <span class="form-check-label">배경프로필</span>
-                                        </label>
-                                        <label class="mb-2 form-check form-check-inline" style="width: 45%;">
-                                            <input class="form-check-input" name="mycategory" type="radio">
-                                            <span class="form-check-label">기타</span>
+                                            <span class="form-check-label" th:text="${cateList.itemName}">이모티콘</span>
                                         </label>
                                     </div>
                                 </div> <!-- col.// -->
