@@ -23,11 +23,4 @@ public class GameListController {
 		model.addAttribute("gameList", gameListService.getGameList());
 		return "admin/game/gameList";
 	}
-	
-	@GetMapping("/addGame")
-	public String addGameView(Model model) {
-		model.addAttribute("title", "게임추가");
-		model.addAttribute("gamelist", gameListService.getGameList());
-		return "admin/game/addGame";
-	}
 }
