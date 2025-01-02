@@ -15,6 +15,14 @@ public class EventServiceImpl implements EventService {
 	private EventMapper eventMapper;
 	public List<Event> getEventList(){
 	return eventMapper.getEventList();
-
+	
+	}
+	
+	public List<Event> getEventParticipant(String ev_cd){
+		return eventMapper.getEventParticipant(ev_cd);
+	}
+	
+	public List<Event> getEventDetail(String ev_cd){
+		return eventMapper.getEventDetail(ev_cd);
 	}
 }
