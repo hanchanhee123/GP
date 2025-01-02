@@ -9,7 +9,7 @@ import lombok.ToString;
 @Setter
 @Getter
 @ToString
-public class EventWinning {
+public class EventWinner {
 
 	private String ew_no;
 	private String evp_no;
